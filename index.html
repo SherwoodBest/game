@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoL Warm-Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <header>
+      <h1>LoL Warm-Up</h1>
+      <p class="sub">A few minutes of mechanics drills before you queue.</p>
+    </header>
+
+    <div id="stage">
+      <canvas id="canvas" width="960" height="600"></canvas>
+
+      <section id="menu" class="overlay">
+        <div class="panel">
+          <button id="routine-btn" class="primary big">Start full routine <span id="routine-len"></span></button>
+          <p class="hint">Runs every drill back to back. Or pick one:</p>
+          <div id="drill-list" class="drill-list"></div>
+          <label class="setting">
+            <input type="checkbox" id="left-click">
+            I move and attack with left-click
+          </label>
+        </div>
+      </section>
+
+      <section id="intro" class="overlay" hidden>
+        <div class="panel">
+          <p id="intro-step" class="step"></p>
+          <h2 id="intro-title"></h2>
+          <ul id="intro-howto" class="howto"></ul>
+          <div class="buttons">
+            <button id="intro-start" class="primary">Start <kbd>Space</kbd></button>
+            <button id="intro-back">Back</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="overlay" hidden>
+        <div class="panel" id="results-body"></div>
+      </section>
+    </div>
+
+    <p class="footer-hint">Press <kbd>Esc</kbd> during a drill to stop it.</p>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
