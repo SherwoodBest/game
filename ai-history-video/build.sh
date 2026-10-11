@@ -30,12 +30,15 @@ for p in "${pids[@]}"; do wait "$p"; done
 
 ffmpeg -y -loglevel error -f concat -safe 0 -i build/segments.txt -c copy build/video.mp4
 
-# Narration over the score, with the music ducking under the voice.
-ffmpeg -y -loglevel error -i build/video.mp4 -i build/narration.wav -i build/music.wav -filter_complex "\
-[1:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=2[v1][v2];\
-[2:a]aresample=48000,volume=0.32[m];\
+# Narration over the score, with the music ducking under the voice. The
+# lossless mix is kept for the web player's parts (web/build.mjs).
+ffmpeg -y -loglevel error -i build/narration.wav -i build/music.wav -filter_complex "\
+[0:a]aresample=48000,pan=stereo|c0=c0|c1=c0,asplit=2[v1][v2];\
+[1:a]aresample=48000,volume=0.32[m];\
 [m][v1]sidechaincompress=threshold=0.02:ratio=5:attack=80:release=900[md];\
-[v2][md]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11[a]" \
-  -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 160k -ar 48000 -shortest -movflags +faststart ai-history.mp4
+[v2][md]amix=inputs=2:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000[a]" \
+  -map "[a]" -c:a pcm_s16le build/mix.wav
+ffmpeg -y -loglevel error -i build/video.mp4 -i build/mix.wav -map 0:v -map 1:a \
+  -c:v copy -c:a aac -b:a 160k -shortest -movflags +faststart ai-history.mp4
 
 echo "wrote $(pwd)/ai-history.mp4"
