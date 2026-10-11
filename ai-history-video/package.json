@@ -1,0 +1,13 @@
+{
+  "name": "ai-history-video",
+  "private": true,
+  "description": "Renders \"Thinking Machines\", a narrated video on the history of AI",
+  "type": "module",
+  "scripts": {
+    "build": "./build.sh",
+    "stills": "node render.mjs --stills"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.65"
+  }
+}

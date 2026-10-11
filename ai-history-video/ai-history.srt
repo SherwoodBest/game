@@ -1,0 +1,259 @@
+1
+00:00:02,200 --> 00:00:06,765
+For as long as we have built machines, we have wondered whether they could think.
+
+2
+00:00:07,015 --> 00:00:16,852
+This is the story of how that question became one of the defining technologies of our time: the setbacks, the breakthroughs, and the ideas that finally worked.
+
+3
+00:00:18,652 --> 00:00:27,582
+In 1950, the British mathematician Alan Turing published a paper that opened with a simple question: can machines think?
+
+4
+00:00:27,832 --> 00:00:31,353
+Rather than define thinking, he proposed a test.
+
+5
+00:00:31,603 --> 00:00:38,978
+If a machine could hold a conversation that a person couldn't tell apart from a human's, perhaps we should call it intelligent.
+
+6
+00:00:39,228 --> 00:00:41,309
+He called it the imitation game.
+
+7
+00:00:43,109 --> 00:00:49,323
+Six years later, a small group of researchers gathered at Dartmouth College for a summer workshop.
+
+8
+00:00:49,573 --> 00:00:59,711
+Their proposal, written by John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon, gave the field its name: artificial intelligence.
+
+9
+00:00:59,961 --> 00:01:03,818
+They believed a significant advance could be made in a single summer.
+
+10
+00:01:04,068 --> 00:01:05,986
+It would take a good deal longer.
+
+11
+00:01:07,786 --> 00:01:16,160
+In 1958, Frank Rosenblatt unveiled the perceptron, a machine loosely modeled on the neurons of the brain.
+
+12
+00:01:16,410 --> 00:01:22,740
+Instead of following hand-written rules, it learned from examples by adjusting the strength of its connections.
+
+13
+00:01:22,990 --> 00:01:27,973
+The press predicted it would one day walk, talk, and be conscious of its own existence.
+
+14
+00:01:28,223 --> 00:01:32,939
+That idea, learning by adjusting connections, would wait decades for its moment.
+
+15
+00:01:34,739 --> 00:01:45,655
+Meanwhile, the dominant approach was symbolic: intelligence as the manipulation of logic and rules, and programs soon proved mathematical theorems and solved puzzles.
+
+16
+00:01:45,905 --> 00:01:55,474
+In 1966, Joseph Weizenbaum's ELIZA imitated a therapist using simple pattern matching, and people confided in it anyway.
+
+17
+00:01:55,724 --> 00:02:01,381
+At the Stanford Research Institute, a robot named Shakey learned to plan its own moves.
+
+18
+00:02:03,181 --> 00:02:13,041
+But early promises outran reality: problems that looked simple, like understanding language or recognizing objects, exploded in complexity.
+
+19
+00:02:13,291 --> 00:02:26,471
+In 1969, Minsky and Papert showed the limits of single-layer perceptrons, and in 1973 the Lighthill Report in Britain criticized the field's failure to deliver.
+
+20
+00:02:26,721 --> 00:02:29,742
+Funding dried up. This was the first AI winter.
+
+21
+00:02:31,542 --> 00:02:41,413
+In the 1980s, AI returned as expert systems: programs that encoded the knowledge of human specialists as thousands of “if this, then that” rules.
+
+22
+00:02:41,663 --> 00:02:50,501
+One, called XCON, configured computer orders for Digital Equipment Corporation and saved the company tens of millions of dollars a year.
+
+23
+00:02:50,751 --> 00:03:04,500
+At the same time, in 1986, David Rumelhart, Geoffrey Hinton and Ronald Williams showed how backpropagation could train neural networks with hidden layers, reviving the idea Rosenblatt had started.
+
+24
+00:03:06,300 --> 00:03:10,052
+But expert systems proved brittle and expensive to maintain.
+
+25
+00:03:10,302 --> 00:03:22,112
+When the market for specialized AI hardware collapsed in 1987, a second AI winter set in, and many researchers avoided the term artificial intelligence altogether.
+
+26
+00:03:23,912 --> 00:03:33,481
+Yet progress continued quietly: Yann LeCun's convolutional neural networks learned to read handwritten digits, and were soon reading bank checks.
+
+27
+00:03:33,731 --> 00:03:44,067
+And in 1997, IBM's Deep Blue defeated world chess champion Garry Kasparov, searching around two hundred million positions per second.
+
+28
+00:03:45,867 --> 00:03:52,429
+The 2000s brought the ingredients that had been missing, as the internet produced data on a massive scale.
+
+29
+00:03:52,679 --> 00:04:00,194
+In 2009, Fei-Fei Li's team released ImageNet, more than fourteen million labeled images.
+
+30
+00:04:00,444 --> 00:04:06,507
+And graphics chips built for video games turned out to be ideal for the math of neural networks.
+
+31
+00:04:08,307 --> 00:04:25,898
+In 2012, these ingredients came together: a deep neural network called AlexNet, built by Alex Krizhevsky, Ilya Sutskever and Geoffrey Hinton and trained on two gaming GPUs, won the ImageNet competition by a stunning margin.
+
+32
+00:04:26,148 --> 00:04:31,375
+Within three years, deep networks matched human accuracy on that benchmark.
+
+33
+00:04:31,625 --> 00:04:33,892
+The deep learning revolution had begun.
+
+34
+00:04:35,692 --> 00:04:41,175
+Deep learning spread rapidly, transforming speech recognition and machine translation.
+
+35
+00:04:41,425 --> 00:04:52,724
+In 2014, Ian Goodfellow introduced generative adversarial networks, in which two networks compete: one forging images, the other spotting the fakes.
+
+36
+00:04:52,974 --> 00:05:00,314
+And DeepMind trained a single network to play dozens of Atari games directly from the pixels on the screen.
+
+37
+00:05:02,114 --> 00:05:11,195
+In 2016, DeepMind's AlphaGo defeated Lee Sedol, one of the greatest Go players in the world, four games to one.
+
+38
+00:05:11,445 --> 00:05:18,983
+Go has more possible positions than there are atoms in the observable universe, far too many to search by brute force.
+
+39
+00:05:19,233 --> 00:05:24,344
+AlphaGo learned a kind of intuition, from human games and from playing against itself.
+
+40
+00:05:24,594 --> 00:05:31,505
+Its thirty-seventh move, in game two, was so unexpected that commentators first thought it was a mistake.
+
+41
+00:05:33,305 --> 00:05:39,681
+In 2017, a team at Google published a paper titled Attention Is All You Need.
+
+42
+00:05:39,931 --> 00:05:48,548
+It introduced the Transformer, an architecture that lets every word in a sentence look directly at every other word to work out what matters.
+
+43
+00:05:48,798 --> 00:05:54,536
+Transformers were fast to train on modern hardware, and they scaled remarkably well.
+
+44
+00:05:54,786 --> 00:05:59,572
+Almost every major AI system today is built on this idea.
+
+45
+00:06:01,372 --> 00:06:07,563
+Researchers began training Transformers on vast amounts of text, simply to predict the next word.
+
+46
+00:06:07,813 --> 00:06:23,292
+With GPT-2 in 2019 and GPT-3 in 2020, at a hundred and seventy-five billion parameters, a striking pattern emerged: as models grew larger and saw more data, they improved predictably.
+
+47
+00:06:23,542 --> 00:06:30,510
+New skills, like translation, summarization and simple reasoning, appeared without being explicitly taught.
+
+48
+00:06:32,310 --> 00:06:35,308
+AI also began to transform science.
+
+49
+00:06:35,558 --> 00:06:48,018
+In 2020, DeepMind's AlphaFold 2 predicted the three-dimensional shapes of proteins with accuracy rivaling laboratory experiments, a fifty-year-old grand challenge in biology.
+
+50
+00:06:48,268 --> 00:06:54,564
+Demis Hassabis and John Jumper later shared in the 2024 Nobel Prize in Chemistry.
+
+51
+00:06:54,814 --> 00:07:02,711
+That same year, the Nobel Prize in Physics went to John Hopfield and Geoffrey Hinton, for foundational work on neural networks.
+
+52
+00:07:04,511 --> 00:07:15,392
+In 2022, generative AI reached the public, as systems like DALL·E 2, Midjourney and Stable Diffusion turned text descriptions into images.
+
+53
+00:07:15,642 --> 00:07:25,409
+Then, on November 30th, ChatGPT launched: a large language model fine-tuned with human feedback to follow instructions and hold a conversation.
+
+54
+00:07:25,659 --> 00:07:33,173
+It reached an estimated one hundred million users in about two months, one of the fastest-growing consumer apps in history.
+
+55
+00:07:34,973 --> 00:07:44,844
+A race followed: GPT-4 from OpenAI, Claude from Anthropic, Gemini from Google, and Meta's open-weight Llama models arrived in quick succession.
+
+56
+00:07:45,094 --> 00:07:51,250
+Models learned to see images, hear speech, and read documents hundreds of pages long.
+
+57
+00:07:51,500 --> 00:07:59,874
+Governments responded too, and the European Union passed the AI Act, the first comprehensive law regulating artificial intelligence.
+
+58
+00:08:01,674 --> 00:08:13,077
+Next came models that think before they answer: starting in late 2024, reasoning models were trained to work through hard problems step by step.
+
+59
+00:08:13,327 --> 00:08:21,306
+In 2025, AI systems reached gold-medal performance at the International Mathematical Olympiad.
+
+60
+00:08:21,556 --> 00:08:32,588
+And AI became an agent, able to use tools, browse the web, operate a computer, and write and test software on its own, carrying out tasks that take people hours.
+
+61
+00:08:34,388 --> 00:08:38,675
+Today, hundreds of millions of people use AI every week.
+
+62
+00:08:38,925 --> 00:08:47,855
+Looking back, the pattern is clear: ideas that seemed to fail, like neural networks, succeeded once data and computing power caught up.
+
+63
+00:08:48,105 --> 00:08:58,174
+The open questions now are as big as the breakthroughs: how to make these systems safe, reliable and aligned with human values, and how to share their benefits fairly.
+
+64
+00:08:59,974 --> 00:09:07,117
+Seventy-six years after Alan Turing asked whether machines can think, we are still debating the answer.
+
+65
+00:09:07,367 --> 00:09:13,859
+But the question has changed: it is no longer only what machines can do, but what we will choose to do with them.

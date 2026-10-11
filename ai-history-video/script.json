@@ -1,0 +1,610 @@
+{
+  "title": "Thinking Machines",
+  "subtitle": "A short history of artificial intelligence, 1950 to today",
+  "eras": [
+    {
+      "id": "dawn",
+      "label": "The Dawn",
+      "from": 1950,
+      "to": 1966,
+      "color": "#F5B84B"
+    },
+    {
+      "id": "winter1",
+      "label": "First AI Winter",
+      "from": 1966,
+      "to": 1980,
+      "color": "#8FB8DE",
+      "winter": true
+    },
+    {
+      "id": "boom",
+      "label": "Expert Systems",
+      "from": 1980,
+      "to": 1987,
+      "color": "#B794F6"
+    },
+    {
+      "id": "winter2",
+      "label": "Second AI Winter",
+      "from": 1987,
+      "to": 1994,
+      "color": "#8FB8DE",
+      "winter": true
+    },
+    {
+      "id": "ml",
+      "label": "Machine Learning",
+      "from": 1994,
+      "to": 2012,
+      "color": "#4FD1C5"
+    },
+    {
+      "id": "deep",
+      "label": "Deep Learning",
+      "from": 2012,
+      "to": 2017,
+      "color": "#68D391"
+    },
+    {
+      "id": "llm",
+      "label": "Transformers & LLMs",
+      "from": 2017,
+      "to": 2022,
+      "color": "#F687B3"
+    },
+    {
+      "id": "genai",
+      "label": "Generative AI",
+      "from": 2022,
+      "to": 2026,
+      "color": "#FC8181"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "intro",
+      "visual": "intro",
+      "year": 1950,
+      "narration": [
+        "For as long as we have built machines, we have wondered whether they could think.",
+        "This is the story of how that question became one of the defining technologies of our time: the setbacks, the breakthroughs, and the ideas that finally worked."
+      ]
+    },
+    {
+      "id": "turing",
+      "visual": "turing",
+      "era": "dawn",
+      "year": 1950,
+      "yearLabel": "1950",
+      "title": "Can machines think?",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Alan Turing, “Computing Machinery and Intelligence”"
+        },
+        {
+          "at": 1,
+          "text": "Proposes the Imitation Game, later called the Turing Test"
+        }
+      ],
+      "narration": [
+        "In 1950, the British mathematician Alan Turing published a paper that opened with a simple question: can machines think?",
+        "Rather than define thinking, he proposed a test.",
+        "If a machine could hold a conversation that a person couldn't tell apart from a human's, perhaps we should call it intelligent.",
+        "He called it the imitation game."
+      ]
+    },
+    {
+      "id": "dartmouth",
+      "visual": "dartmouth",
+      "era": "dawn",
+      "year": 1956,
+      "yearLabel": "1956",
+      "title": "A field gets its name",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Dartmouth Summer Research Project"
+        },
+        {
+          "at": 1,
+          "text": "McCarthy, Minsky, Rochester and Shannon coin “artificial intelligence”"
+        }
+      ],
+      "narration": [
+        "Six years later, a small group of researchers gathered at Dartmouth College for a summer workshop.",
+        "Their proposal, written by John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon, gave the field its name: artificial intelligence.",
+        "They believed a significant advance could be made in a single summer.",
+        "It would take a good deal longer."
+      ]
+    },
+    {
+      "id": "perceptron",
+      "visual": "perceptron",
+      "era": "dawn",
+      "year": 1958,
+      "yearLabel": "1958",
+      "title": "The perceptron learns",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Frank Rosenblatt, Cornell Aeronautical Laboratory"
+        },
+        {
+          "at": 1,
+          "text": "Learns from examples by adjusting connection weights"
+        }
+      ],
+      "narration": [
+        "In 1958, Frank Rosenblatt unveiled the perceptron, a machine loosely modeled on the neurons of the brain.",
+        "Instead of following hand-written rules, it learned from examples by adjusting the strength of its connections.",
+        "The press predicted it would one day walk, talk, and be conscious of its own existence.",
+        "That idea, learning by adjusting connections, would wait decades for its moment."
+      ]
+    },
+    {
+      "id": "symbolic",
+      "visual": "eliza",
+      "era": "dawn",
+      "year": 1966,
+      "yearLabel": "1956–1972",
+      "title": "Intelligence as logic and rules",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Logic Theorist proves theorems from Principia Mathematica"
+        },
+        {
+          "at": 1,
+          "text": "ELIZA (1966) chats using simple pattern matching"
+        },
+        {
+          "at": 2,
+          "text": "Shakey the robot plans its own actions"
+        }
+      ],
+      "narration": [
+        "Meanwhile, the dominant approach was symbolic: intelligence as the manipulation of logic and rules, and programs soon proved mathematical theorems and solved puzzles.",
+        "In 1966, Joseph Weizenbaum's ELIZA imitated a therapist using simple pattern matching, and people confided in it anyway.",
+        "At the Stanford Research Institute, a robot named Shakey learned to plan its own moves."
+      ],
+      "say": {
+        "1": "In 1966, Joseph Weizenbaum's Eliza imitated a therapist using simple pattern matching, and people confided in it anyway."
+      }
+    },
+    {
+      "id": "winter1",
+      "visual": "winter",
+      "era": "winter1",
+      "year": 1974,
+      "yearLabel": "1974–1980",
+      "title": "The first AI winter",
+      "facts": [
+        {
+          "at": 1,
+          "text": "1969: Minsky & Papert’s “Perceptrons” exposes single-layer limits"
+        },
+        {
+          "at": 1,
+          "text": "1973: UK Lighthill Report criticizes the field"
+        },
+        {
+          "at": 2,
+          "text": "Funding in the US and UK is cut back sharply"
+        }
+      ],
+      "narration": [
+        "But early promises outran reality: problems that looked simple, like understanding language or recognizing objects, exploded in complexity.",
+        "In 1969, Minsky and Papert showed the limits of single-layer perceptrons, and in 1973 the Lighthill Report in Britain criticized the field's failure to deliver.",
+        "Funding dried up. This was the first AI winter."
+      ]
+    },
+    {
+      "id": "expert",
+      "visual": "expert",
+      "era": "boom",
+      "year": 1982,
+      "yearLabel": "1980s",
+      "title": "Expert systems and backpropagation",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Knowledge captured as thousands of IF–THEN rules"
+        },
+        {
+          "at": 1,
+          "text": "XCON configures computer orders at Digital Equipment Corp."
+        },
+        {
+          "at": 2,
+          "text": "1986: Rumelhart, Hinton & Williams popularize backpropagation"
+        }
+      ],
+      "narration": [
+        "In the 1980s, AI returned as expert systems: programs that encoded the knowledge of human specialists as thousands of “if this, then that” rules.",
+        "One, called XCON, configured computer orders for Digital Equipment Corporation and saved the company tens of millions of dollars a year.",
+        "At the same time, in 1986, David Rumelhart, Geoffrey Hinton and Ronald Williams showed how backpropagation could train neural networks with hidden layers, reviving the idea Rosenblatt had started."
+      ],
+      "say": {
+        "1": "One, called X-con, configured computer orders for Digital Equipment Corporation and saved the company tens of millions of dollars a year.",
+        "0": "In the 1980s, AI returned as expert systems: programs that encoded the knowledge of human specialists as thousands of \"if this, then that\" rules."
+      }
+    },
+    {
+      "id": "winter2",
+      "visual": "winter2",
+      "era": "winter2",
+      "year": 1988,
+      "yearLabel": "1987–1993",
+      "title": "The second AI winter",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Rule systems prove brittle and costly to maintain"
+        },
+        {
+          "at": 1,
+          "text": "1987: the specialized Lisp machine market collapses"
+        }
+      ],
+      "narration": [
+        "But expert systems proved brittle and expensive to maintain.",
+        "When the market for specialized AI hardware collapsed in 1987, a second AI winter set in, and many researchers avoided the term artificial intelligence altogether."
+      ]
+    },
+    {
+      "id": "nineties",
+      "visual": "nineties",
+      "era": "ml",
+      "year": 1997,
+      "yearLabel": "1989–1997",
+      "title": "Quiet progress",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Yann LeCun’s convolutional networks read handwritten digits"
+        },
+        {
+          "at": 1,
+          "text": "1997: IBM Deep Blue beats Garry Kasparov 3½–2½"
+        }
+      ],
+      "narration": [
+        "Yet progress continued quietly: Yann LeCun's convolutional neural networks learned to read handwritten digits, and were soon reading bank checks.",
+        "And in 1997, IBM's Deep Blue defeated world chess champion Garry Kasparov, searching around two hundred million positions per second."
+      ],
+      "say": {
+        "0": "Yet progress continued quietly: Yann Le Kun's convolutional neural networks learned to read handwritten digits, and were soon reading bank checks."
+      }
+    },
+    {
+      "id": "data",
+      "visual": "data",
+      "era": "ml",
+      "year": 2009,
+      "yearLabel": "2000s",
+      "title": "Data and compute arrive",
+      "facts": [
+        {
+          "at": 0,
+          "text": "The internet generates data on a massive scale"
+        },
+        {
+          "at": 1,
+          "text": "2009: ImageNet, 14 million labeled images"
+        },
+        {
+          "at": 2,
+          "text": "GPUs built for games accelerate neural networks"
+        }
+      ],
+      "narration": [
+        "The 2000s brought the ingredients that had been missing, as the internet produced data on a massive scale.",
+        "In 2009, Fei-Fei Li's team released ImageNet, more than fourteen million labeled images.",
+        "And graphics chips built for video games turned out to be ideal for the math of neural networks."
+      ],
+      "say": {
+        "1": "In 2009, Fay-Fay Lee's team released ImageNet, more than fourteen million labeled images."
+      }
+    },
+    {
+      "id": "alexnet",
+      "visual": "alexnet",
+      "era": "deep",
+      "year": 2012,
+      "yearLabel": "2012",
+      "title": "The deep learning revolution",
+      "facts": [
+        {
+          "at": 0,
+          "text": "AlexNet: Krizhevsky, Sutskever & Hinton"
+        },
+        {
+          "at": 0,
+          "text": "Trained on two consumer gaming GPUs"
+        },
+        {
+          "at": 1,
+          "text": "Error rates fall below the human estimate by 2015"
+        }
+      ],
+      "narration": [
+        "In 2012, these ingredients came together: a deep neural network called AlexNet, built by Alex Krizhevsky, Ilya Sutskever and Geoffrey Hinton and trained on two gaming GPUs, won the ImageNet competition by a stunning margin.",
+        "Within three years, deep networks matched human accuracy on that benchmark.",
+        "The deep learning revolution had begun."
+      ],
+      "say": {
+        "0": "In 2012, these ingredients came together: a deep neural network called Alex-Net, built by Alex Kri-zhev-sky, Ilya Suts-kever and Geoffrey Hinton and trained on two gaming G.P.U.s, won the ImageNet competition by a stunning margin."
+      }
+    },
+    {
+      "id": "deepspread",
+      "visual": "gan",
+      "era": "deep",
+      "year": 2014,
+      "yearLabel": "2013–2015",
+      "title": "Deep learning everywhere",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Breakthroughs in speech recognition and translation"
+        },
+        {
+          "at": 1,
+          "text": "2014: Ian Goodfellow invents GANs"
+        },
+        {
+          "at": 2,
+          "text": "DeepMind’s DQN learns Atari games from raw pixels"
+        }
+      ],
+      "narration": [
+        "Deep learning spread rapidly, transforming speech recognition and machine translation.",
+        "In 2014, Ian Goodfellow introduced generative adversarial networks, in which two networks compete: one forging images, the other spotting the fakes.",
+        "And DeepMind trained a single network to play dozens of Atari games directly from the pixels on the screen."
+      ]
+    },
+    {
+      "id": "alphago",
+      "visual": "alphago",
+      "era": "deep",
+      "year": 2016,
+      "yearLabel": "2016",
+      "title": "AlphaGo defeats Lee Sedol",
+      "facts": [
+        {
+          "at": 0,
+          "text": "DeepMind’s AlphaGo wins the match 4–1 in Seoul"
+        },
+        {
+          "at": 2,
+          "text": "Learned from human games and from self-play"
+        },
+        {
+          "at": 3,
+          "text": "Game 2, Move 37: a move no human expected"
+        }
+      ],
+      "narration": [
+        "In 2016, DeepMind's AlphaGo defeated Lee Sedol, one of the greatest Go players in the world, four games to one.",
+        "Go has more possible positions than there are atoms in the observable universe, far too many to search by brute force.",
+        "AlphaGo learned a kind of intuition, from human games and from playing against itself.",
+        "Its thirty-seventh move, in game two, was so unexpected that commentators first thought it was a mistake."
+      ],
+      "say": {
+        "0": "In 2016, DeepMind's Alpha Go defeated Lee Sedol, one of the greatest Go players in the world, four games to one.",
+        "2": "Alpha Go learned a kind of intuition, from human games and from playing against itself."
+      }
+    },
+    {
+      "id": "transformer",
+      "visual": "transformer",
+      "era": "llm",
+      "year": 2017,
+      "yearLabel": "2017",
+      "title": "Attention Is All You Need",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Vaswani et al., Google: the Transformer architecture"
+        },
+        {
+          "at": 1,
+          "text": "Self-attention: every word looks at every other word"
+        },
+        {
+          "at": 2,
+          "text": "Parallel, fast to train, and it scales"
+        }
+      ],
+      "narration": [
+        "In 2017, a team at Google published a paper titled Attention Is All You Need.",
+        "It introduced the Transformer, an architecture that lets every word in a sentence look directly at every other word to work out what matters.",
+        "Transformers were fast to train on modern hardware, and they scaled remarkably well.",
+        "Almost every major AI system today is built on this idea."
+      ]
+    },
+    {
+      "id": "scaling",
+      "visual": "scaling",
+      "era": "llm",
+      "year": 2020,
+      "yearLabel": "2018–2020",
+      "title": "Bigger models, new abilities",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Trained on vast amounts of text to predict the next word"
+        },
+        {
+          "at": 1,
+          "text": "GPT-3 (2020): 175 billion parameters"
+        },
+        {
+          "at": 1,
+          "text": "Scaling laws: more compute and data, predictably better"
+        }
+      ],
+      "narration": [
+        "Researchers began training Transformers on vast amounts of text, simply to predict the next word.",
+        "With GPT-2 in 2019 and GPT-3 in 2020, at a hundred and seventy-five billion parameters, a striking pattern emerged: as models grew larger and saw more data, they improved predictably.",
+        "New skills, like translation, summarization and simple reasoning, appeared without being explicitly taught."
+      ],
+      "say": {
+        "1": "With G P T 2 in 2019 and G P T 3 in 2020, at a hundred and seventy-five billion parameters, a striking pattern emerged: as models grew larger and saw more data, they improved predictably."
+      }
+    },
+    {
+      "id": "alphafold",
+      "visual": "alphafold",
+      "era": "llm",
+      "year": 2020,
+      "yearLabel": "2020",
+      "title": "AI transforms science",
+      "facts": [
+        {
+          "at": 0,
+          "text": "AlphaFold 2 predicts protein structures at CASP14"
+        },
+        {
+          "at": 2,
+          "text": "2024 Nobel Prize in Chemistry: Hassabis & Jumper (with David Baker)"
+        },
+        {
+          "at": 3,
+          "text": "2024 Nobel Prize in Physics: Hopfield & Hinton"
+        }
+      ],
+      "narration": [
+        "AI also began to transform science.",
+        "In 2020, DeepMind's AlphaFold 2 predicted the three-dimensional shapes of proteins with accuracy rivaling laboratory experiments, a fifty-year-old grand challenge in biology.",
+        "Demis Hassabis and John Jumper later shared in the 2024 Nobel Prize in Chemistry.",
+        "That same year, the Nobel Prize in Physics went to John Hopfield and Geoffrey Hinton, for foundational work on neural networks."
+      ],
+      "say": {
+        "1": "In 2020, DeepMind's Alpha Fold 2 predicted the three-dimensional shapes of proteins with accuracy rivaling laboratory experiments, a fifty-year-old grand challenge in biology."
+      }
+    },
+    {
+      "id": "chatgpt",
+      "visual": "chatgpt",
+      "era": "genai",
+      "year": 2022,
+      "yearLabel": "2022",
+      "title": "Generative AI goes public",
+      "facts": [
+        {
+          "at": 0,
+          "text": "DALL·E 2, Midjourney and Stable Diffusion turn text into images"
+        },
+        {
+          "at": 1,
+          "text": "November 30: ChatGPT launches"
+        },
+        {
+          "at": 2,
+          "text": "An estimated 100 million users in about two months"
+        }
+      ],
+      "narration": [
+        "In 2022, generative AI reached the public, as systems like DALL·E 2, Midjourney and Stable Diffusion turned text descriptions into images.",
+        "Then, on November 30th, ChatGPT launched: a large language model fine-tuned with human feedback to follow instructions and hold a conversation.",
+        "It reached an estimated one hundred million users in about two months, one of the fastest-growing consumer apps in history."
+      ],
+      "say": {
+        "0": "In 2022, generative AI reached the public, as systems like Dolly 2, Midjourney and Stable Diffusion turned text descriptions into images.",
+        "1": "Then, on November 30th, Chat G P T launched: a large language model fine-tuned with human feedback to follow instructions and hold a conversation."
+      }
+    },
+    {
+      "id": "race",
+      "visual": "race",
+      "era": "genai",
+      "year": 2023,
+      "yearLabel": "2023–2024",
+      "title": "The frontier race",
+      "facts": [
+        {
+          "at": 0,
+          "text": "GPT-4, Claude, Gemini and open-weight Llama"
+        },
+        {
+          "at": 1,
+          "text": "Multimodal: text, images, audio and long documents"
+        },
+        {
+          "at": 2,
+          "text": "2024: the EU AI Act becomes law"
+        }
+      ],
+      "narration": [
+        "A race followed: GPT-4 from OpenAI, Claude from Anthropic, Gemini from Google, and Meta's open-weight Llama models arrived in quick succession.",
+        "Models learned to see images, hear speech, and read documents hundreds of pages long.",
+        "Governments responded too, and the European Union passed the AI Act, the first comprehensive law regulating artificial intelligence."
+      ],
+      "say": {
+        "0": "A race followed: G P T 4 from OpenAI, Claude from Anthropic, Gemini from Google, and Meta's open-weight Llama models arrived in quick succession."
+      }
+    },
+    {
+      "id": "agents",
+      "visual": "agents",
+      "era": "genai",
+      "year": 2025,
+      "yearLabel": "2024–2026",
+      "title": "Reasoning and agents",
+      "facts": [
+        {
+          "at": 0,
+          "text": "Reasoning models think step by step before answering"
+        },
+        {
+          "at": 1,
+          "text": "2025: gold-medal level at the International Math Olympiad"
+        },
+        {
+          "at": 2,
+          "text": "Agents use tools, operate computers and write software"
+        }
+      ],
+      "narration": [
+        "Next came models that think before they answer: starting in late 2024, reasoning models were trained to work through hard problems step by step.",
+        "In 2025, AI systems reached gold-medal performance at the International Mathematical Olympiad.",
+        "And AI became an agent, able to use tools, browse the web, operate a computer, and write and test software on its own, carrying out tasks that take people hours."
+      ]
+    },
+    {
+      "id": "today",
+      "visual": "today",
+      "era": "genai",
+      "year": 2026,
+      "yearLabel": "Today",
+      "title": "Lessons and open questions",
+      "facts": [
+        {
+          "at": 1,
+          "text": "Breakthroughs = algorithms + data + compute"
+        },
+        {
+          "at": 2,
+          "text": "Open questions: safety, reliability, alignment, fairness"
+        }
+      ],
+      "narration": [
+        "Today, hundreds of millions of people use AI every week.",
+        "Looking back, the pattern is clear: ideas that seemed to fail, like neural networks, succeeded once data and computing power caught up.",
+        "The open questions now are as big as the breakthroughs: how to make these systems safe, reliable and aligned with human values, and how to share their benefits fairly."
+      ]
+    },
+    {
+      "id": "outro",
+      "visual": "outro",
+      "year": 2026,
+      "narration": [
+        "Seventy-six years after Alan Turing asked whether machines can think, we are still debating the answer.",
+        "But the question has changed: it is no longer only what machines can do, but what we will choose to do with them."
+      ]
+    }
+  ]
+}
