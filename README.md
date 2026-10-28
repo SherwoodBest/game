@@ -24,3 +24,7 @@ Press `Esc` during a drill to stop it.
 ## Suggested in-client follow-up
 
 After the routine, if you have time, spend 5 minutes in Practice Tool on your main champion: last-hit one wave with no abilities, then run through your main combos on the target dummy.
+
+## Also in this repo
+
+[`pc-manager/`](pc-manager/) holds **PC Manager**, a local app for tuning up a Windows laptop: clean-up, startup apps, power plans, tweaks and maintenance. Double-click `Start PC Manager.bat` to run it. See [its README](pc-manager/README.md).
