@@ -62,7 +62,7 @@ Register-Page 'Settings' -Init {
                 $link.TargetPath = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
                 $link.Arguments = "-NoProfile -ExecutionPolicy Bypass -STA -WindowStyle Hidden -File `"$AppScript`""
                 $link.WorkingDirectory = $AppRoot
-                $link.IconLocation = "$env:SystemRoot\System32\shell32.dll,15"
+                $link.IconLocation = (Join-Path $AppRoot 'icon.ico')
                 $link.Description = 'Keep your PC fast, tidy and healthy'
                 $link.Save()
                 Write-Activity 'Added a desktop shortcut.'

@@ -93,7 +93,11 @@ try {
     Set-Theme $Settings.Theme
 
     $window = Import-Xaml (Join-Path $AppRoot 'ui\Shell.xaml')
-    try { $window.Icon = New-LogoBitmap } catch { }
+    try {
+        $window.Icon = [System.Windows.Media.Imaging.BitmapFrame]::Create((New-Object System.Uri (Join-Path $AppRoot 'icon.ico')))
+    } catch {
+        try { $window.Icon = New-LogoBitmap } catch { }
+    }
 
     # Fit the window to this screen (usable area, in the same units WPF uses),
     # so the title bar is never pushed off the top on small or scaled displays.
