@@ -231,26 +231,24 @@ function Set-Ring($Ellipse, [double]$Percent) {
     $Ellipse.Opacity = $(if ($Percent -le 0) { 0 } else { 1 })
 }
 
-$RingJobs = New-Object System.Collections.Generic.List[object]
-$RingTimer = New-Object System.Windows.Threading.DispatcherTimer
-$RingTimer.Interval = [TimeSpan]::FromMilliseconds(16)
-$RingTimer.Add_Tick({
-        $now = [DateTime]::Now
-        foreach ($job in @($RingJobs)) {
-            $t = [math]::Min(1, ($now - $job.Start).TotalMilliseconds / 900)
-            $eased = 1 - [math]::Pow(1 - $t, 3)
-            $value = $job.From + ($job.To - $job.From) * $eased
-            Set-Ring $job.Ellipse $value
-            if ($job.Label) { $job.Label.Text = [string][int][math]::Round($value) }
-            if ($t -ge 1) { [void]$RingJobs.Remove($job) }
-        }
-        if ($RingJobs.Count -eq 0) { $RingTimer.Stop() }
-    })
-
+# Each ring gets its own timer, kept in the ellipse's Tag (no shared list).
 function Start-RingFill($Ellipse, [double]$To, $Label = $null, [double]$From = 0) {
-    foreach ($old in @($RingJobs)) { if ($old.Ellipse -eq $Ellipse) { [void]$RingJobs.Remove($old) } }
-    $RingJobs.Add(@{ Ellipse = $Ellipse; From = $From; To = $To; Label = $Label; Start = [DateTime]::Now })
-    $RingTimer.Start()
+    if ($Ellipse.Tag -is [System.Windows.Threading.DispatcherTimer]) { $Ellipse.Tag.Stop() }
+    $timer = New-Object System.Windows.Threading.DispatcherTimer
+    $timer.Interval = [TimeSpan]::FromMilliseconds(16)
+    $timer.Tag = @{ Ellipse = $Ellipse; Label = $Label; From = $From; To = $To; Start = [DateTime]::Now }
+    $timer.Add_Tick({
+            param($sender, $e)
+            $st = $sender.Tag
+            $t = [math]::Min(1.0, ([DateTime]::Now - $st.Start).TotalMilliseconds / 900.0)
+            $eased = 1.0 - [math]::Pow(1.0 - $t, 3)
+            $value = [double]$st.From + ([double]$st.To - [double]$st.From) * $eased
+            Set-Ring $st.Ellipse $value
+            if ($null -ne $st.Label) { $st.Label.Text = ([int][math]::Round($value)).ToString() }
+            if ($t -ge 1.0) { $sender.Stop() }
+        })
+    $Ellipse.Tag = $timer
+    $timer.Start()
 }
 
 function Start-Spin($Ellipse) {
@@ -344,8 +342,10 @@ function Invoke-Guarded([scriptblock]$Action, $Argument) {
     try {
         & $Action $Argument
     } catch {
-        Write-Activity ('Problem: {0}' -f $_.Exception.Message)
-        Show-Toast ('Something went wrong: {0}' -f $_.Exception.Message) 'error'
+        $where = ''
+        if ($_.InvocationInfo) { $where = ' [{0}, line {1}]' -f (Split-Path -Leaf $_.InvocationInfo.ScriptName), $_.InvocationInfo.ScriptLineNumber }
+        Write-Activity ('Problem: {0}{1}' -f $_.Exception.Message, $where)
+        Show-Toast ('Something went wrong: {0}{1}' -f $_.Exception.Message, $where) 'error'
     }
 }
 
