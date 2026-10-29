@@ -1,0 +1,172 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PC Manager" Width="1180" Height="780" MinWidth="980" MinHeight="660"
+        WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="CanResize"
+        Background="{DynamicResource Bg}" Foreground="{DynamicResource Text}"
+        FontFamily="Segoe UI" FontSize="13" UseLayoutRounding="True" SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Display">
+
+  <WindowChrome.WindowChrome>
+    <WindowChrome CaptionHeight="44" ResizeBorderThickness="6" GlassFrameThickness="0,0,0,1"
+                  CornerRadius="0" UseAeroCaptionButtons="False"/>
+  </WindowChrome.WindowChrome>
+
+  <Grid x:Name="RootGrid">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="44"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="232"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <!-- Title bar (drag area comes from WindowChrome) -->
+    <Grid Grid.Row="0" Grid.ColumnSpan="2">
+      <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0,0,0">
+        <Border Width="24" Height="24" CornerRadius="7">
+          <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+              <GradientStop Color="#6A9BFF" Offset="0"/>
+              <GradientStop Color="#2F5FE3" Offset="1"/>
+            </LinearGradientBrush>
+          </Border.Background>
+          <TextBlock Text="&#xE770;" FontFamily="{StaticResource IconFont}" FontSize="12" Foreground="#FFFFFF"
+                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+        <TextBlock Text="PC Manager" FontSize="13" FontWeight="SemiBold" Margin="12,0,0,0" VerticalAlignment="Center"/>
+        <Border x:Name="AdminPill" Style="{StaticResource Pill}" Margin="12,0,0,0"
+                WindowChrome.IsHitTestVisibleInChrome="True">
+          <TextBlock x:Name="AdminPillText" Text="Administrator" FontSize="11" Foreground="{DynamicResource Accent}"/>
+        </Border>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Button x:Name="BtnMin" Style="{StaticResource Btn.Caption}" Height="44" Content="&#xE921;"
+                ToolTip="Minimize" WindowChrome.IsHitTestVisibleInChrome="True"/>
+        <Button x:Name="BtnMax" Style="{StaticResource Btn.Caption}" Height="44" Content="&#xE922;"
+                ToolTip="Maximize" WindowChrome.IsHitTestVisibleInChrome="True"/>
+        <Button x:Name="BtnClose" Style="{StaticResource Btn.Close}" Height="44" Content="&#xE8BB;"
+                ToolTip="Close" WindowChrome.IsHitTestVisibleInChrome="True"/>
+      </StackPanel>
+    </Grid>
+
+    <!-- Sidebar -->
+    <DockPanel Grid.Row="1" Grid.Column="0" Margin="12,6,10,16">
+      <StackPanel DockPanel.Dock="Bottom">
+        <RadioButton x:Name="NavSettings" Style="{StaticResource Nav}" Tag="Settings">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE713;"/>
+            <TextBlock Text="Settings" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <TextBlock x:Name="VersionText" Style="{StaticResource T.Caption}" Margin="16,12,0,0" Text="Version 2.0"/>
+      </StackPanel>
+      <StackPanel>
+        <RadioButton x:Name="NavHome" Style="{StaticResource Nav}" Tag="Home">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE80F;"/>
+            <TextBlock Text="Home" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <RadioButton x:Name="NavCleaner" Style="{StaticResource Nav}" Tag="Cleaner">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE74D;"/>
+            <TextBlock Text="Cleaner" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <RadioButton x:Name="NavStorage" Style="{StaticResource Nav}" Tag="Storage">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xEDA2;"/>
+            <TextBlock Text="Storage" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <RadioButton x:Name="NavStartup" Style="{StaticResource Nav}" Tag="Startup">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE7E8;"/>
+            <TextBlock Text="Startup apps" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <RadioButton x:Name="NavProcesses" Style="{StaticResource Nav}" Tag="Processes">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE9D9;"/>
+            <TextBlock Text="Running apps" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <RadioButton x:Name="NavApps" Style="{StaticResource Nav}" Tag="Apps">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE71D;"/>
+            <TextBlock Text="Installed apps" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <RadioButton x:Name="NavPower" Style="{StaticResource Nav}" Tag="Power">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE83F;"/>
+            <TextBlock Text="Power &amp; battery" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <RadioButton x:Name="NavTweaks" Style="{StaticResource Nav}" Tag="Tweaks">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE9E9;"/>
+            <TextBlock Text="Tweaks" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+        <RadioButton x:Name="NavToolbox" Style="{StaticResource Nav}" Tag="Toolbox">
+          <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource Glyph}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" Text="&#xE90F;"/>
+            <TextBlock Text="Toolbox" Margin="14,0,0,0" VerticalAlignment="Center"/>
+          </StackPanel>
+        </RadioButton>
+      </StackPanel>
+    </DockPanel>
+
+    <!-- Pages are added here at start-up -->
+    <Grid x:Name="PageHost" Grid.Row="1" Grid.Column="1" ClipToBounds="True"/>
+
+    <!-- In-app dialog -->
+    <Grid x:Name="DialogLayer" Grid.RowSpan="2" Grid.ColumnSpan="2" Visibility="Collapsed" Background="{DynamicResource Overlay}">
+      <Border x:Name="DialogCard" Width="460" CornerRadius="12" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+              Background="{DynamicResource Card}" BorderBrush="{DynamicResource Border}">
+        <Border.Effect>
+          <DropShadowEffect BlurRadius="32" ShadowDepth="8" Opacity="0.22" Color="#000000"/>
+        </Border.Effect>
+        <StackPanel>
+          <StackPanel Margin="26,24,26,22">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+              <Border x:Name="DialogIconTile" Style="{StaticResource IconTile}" Margin="0,0,14,0">
+                <TextBlock x:Name="DialogGlyph" Style="{StaticResource Glyph}" HorizontalAlignment="Center" FontSize="18"
+                           Foreground="{DynamicResource Accent}" Text="&#xE946;"/>
+              </Border>
+              <TextBlock x:Name="DialogTitle" FontSize="17" FontWeight="SemiBold" VerticalAlignment="Center"
+                         TextWrapping="Wrap" MaxWidth="340"/>
+            </StackPanel>
+            <TextBlock x:Name="DialogText" Style="{StaticResource T.Body}" Foreground="{DynamicResource TextSub}" LineHeight="20"/>
+          </StackPanel>
+          <Border CornerRadius="0,0,12,12" Padding="26,14" BorderThickness="0,1,0,0"
+                  Background="{DynamicResource Bg}" BorderBrush="{DynamicResource Border}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+              <Button x:Name="DialogSecondary" Content="Cancel" Margin="0,0,10,0" MinWidth="100"/>
+              <Button x:Name="DialogPrimary" Style="{StaticResource Btn.Accent}" Content="OK" MinWidth="100"/>
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </Border>
+    </Grid>
+
+    <!-- Notification bubble -->
+    <Border x:Name="Toast" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+            Margin="232,0,0,28" CornerRadius="10" Padding="16,11" Visibility="Collapsed" IsHitTestVisible="False" Opacity="0"
+            Background="{DynamicResource ToastBg}">
+      <Border.Effect>
+        <DropShadowEffect BlurRadius="22" ShadowDepth="4" Opacity="0.28" Color="#000000"/>
+      </Border.Effect>
+      <Border.RenderTransform>
+        <TranslateTransform x:Name="ToastShift" Y="0"/>
+      </Border.RenderTransform>
+      <StackPanel Orientation="Horizontal">
+        <TextBlock x:Name="ToastGlyph" Style="{StaticResource Glyph}" FontSize="15" Margin="0,0,10,0" Text="&#xE73E;"/>
+        <TextBlock x:Name="ToastText" Foreground="{DynamicResource ToastText}" FontSize="13" VerticalAlignment="Center"
+                   MaxWidth="560" TextWrapping="Wrap"/>
+      </StackPanel>
+    </Border>
+  </Grid>
+</Window>

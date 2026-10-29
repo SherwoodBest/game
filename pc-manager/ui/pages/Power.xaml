@@ -1,0 +1,58 @@
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+    <StackPanel Margin="16,6,32,28">
+      <TextBlock Style="{StaticResource T.Title}" Text="Power &amp; battery"/>
+      <TextBlock Style="{StaticResource T.Subtitle}" Text="Choose how your laptop balances speed and battery life, and check how healthy your battery is."/>
+
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="3*"/>
+          <ColumnDefinition Width="16"/>
+          <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Style="{StaticResource Card}" VerticalAlignment="Top">
+          <StackPanel>
+            <TextBlock Style="{StaticResource T.Section}" Text="Power plan"/>
+            <StackPanel x:Name="PowerPlans"/>
+            <TextBlock Style="{StaticResource T.Sub}" Margin="2,6,0,14"
+                       Text="Many newer laptops only have the Balanced plan. On those, use Power mode instead: Best performance when plugged in, Best power efficiency on battery."/>
+            <WrapPanel>
+              <Button x:Name="PowerModeBtn" Content="Power mode settings" Margin="0,0,10,0"/>
+              <Button x:Name="PowerAddPlanBtn" Content="Add High performance plan"/>
+            </WrapPanel>
+          </StackPanel>
+        </Border>
+
+        <Border Grid.Column="2" Style="{StaticResource Card}" VerticalAlignment="Top">
+          <StackPanel>
+            <TextBlock Style="{StaticResource T.Section}" Text="Battery"/>
+            <Grid x:Name="BatteryRingBox" Width="150" Height="150" HorizontalAlignment="Center" Margin="0,4,0,18">
+              <Ellipse Width="150" Height="150" StrokeThickness="10" Stroke="{DynamicResource Track}"/>
+              <Ellipse x:Name="BatteryRing" Width="150" Height="150" StrokeThickness="10" Stroke="{DynamicResource Good}"
+                       StrokeDashCap="Round" RenderTransformOrigin="0.5,0.5" Opacity="0">
+                <Ellipse.RenderTransform>
+                  <RotateTransform Angle="-90"/>
+                </Ellipse.RenderTransform>
+              </Ellipse>
+              <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                  <TextBlock x:Name="BatteryRingValue" Text="--" FontSize="34" FontWeight="SemiBold" Foreground="{DynamicResource Text}"/>
+                  <TextBlock Text="%" FontSize="16" FontWeight="SemiBold" Foreground="{DynamicResource TextSub}" Margin="2,0,0,7" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <TextBlock x:Name="BatteryRingLabel" Style="{StaticResource T.Caption}" HorizontalAlignment="Center" Text="Battery health"/>
+              </StackPanel>
+            </Grid>
+            <StackPanel x:Name="BatteryInfo"/>
+            <TextBlock x:Name="BatteryNote" Style="{StaticResource T.Sub}" Margin="0,2,0,14"/>
+            <WrapPanel>
+              <Button x:Name="BatteryReportBtn" Content="Battery report" Margin="0,0,10,10"/>
+              <Button x:Name="EnergyReportBtn" Content="Energy check (1 min)" Margin="0,0,0,10"/>
+            </WrapPanel>
+          </StackPanel>
+        </Border>
+      </Grid>
+    </StackPanel>
+  </ScrollViewer>
+</Grid>
