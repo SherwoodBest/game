@@ -95,6 +95,17 @@ try {
     $window = Import-Xaml (Join-Path $AppRoot 'ui\Shell.xaml')
     try { $window.Icon = New-LogoBitmap } catch { }
 
+    # Fit the window to this screen (usable area, in the same units WPF uses),
+    # so the title bar is never pushed off the top on small or scaled displays.
+    $area = [System.Windows.SystemParameters]::WorkArea
+    $window.MinWidth = [math]::Min(900, [math]::Max(600, $area.Width - 24))
+    $window.MinHeight = [math]::Min(560, [math]::Max(400, $area.Height - 24))
+    $window.Width = [math]::Min(1180, $area.Width - 24)
+    $window.Height = [math]::Min(780, $area.Height - 24)
+    $window.WindowStartupLocation = 'Manual'
+    $window.Left = $area.Left + ($area.Width - $window.Width) / 2
+    $window.Top = $area.Top + ($area.Height - $window.Height) / 2
+
     Initialize-Pages (Join-Path $AppRoot 'ui\pages')
     Initialize-Shell
     Initialize-Worker $WorkerFiles
