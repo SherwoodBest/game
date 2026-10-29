@@ -87,9 +87,9 @@ function New-QuickTile([int]$Glyph, [string]$Title, [string]$Text, [scriptblock]
     $icon = New-IconTile $Glyph $Color $Soft 34
     $icon.HorizontalAlignment = 'Left'
     [void]$stack.Children.Add($icon)
-    $title = New-Text $Title 13.5 'Text' -Bold -Trim
-    $title.Margin = New-Thick 0 12 0 2
-    [void]$stack.Children.Add($title)
+    $heading = New-Text $Title 13.5 'Text' -Bold -Trim
+    $heading.Margin = New-Thick 0 12 0 2
+    [void]$stack.Children.Add($heading)
     [void]$stack.Children.Add((New-Text $Text 12 'TextSub' -Trim))
     $tile.Content = $stack
     if ($OnClick) { $tile.Add_Click($OnClick) }
