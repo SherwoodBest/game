@@ -59,11 +59,11 @@ Register-Page 'Settings' -Init {
             Invoke-Guarded {
                 $shell = New-Object -ComObject WScript.Shell
                 $link = $shell.CreateShortcut((Join-Path ([Environment]::GetFolderPath('Desktop')) 'PC Manager.lnk'))
-                $link.TargetPath = Join-Path $AppRoot 'Start PC Manager.bat'
+                $link.TargetPath = "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe"
+                $link.Arguments = "-NoProfile -ExecutionPolicy Bypass -STA -WindowStyle Hidden -File `"$AppScript`""
                 $link.WorkingDirectory = $AppRoot
                 $link.IconLocation = "$env:SystemRoot\System32\shell32.dll,15"
                 $link.Description = 'Keep your PC fast, tidy and healthy'
-                $link.WindowStyle = 7   # start the launcher console minimized
                 $link.Save()
                 Write-Activity 'Added a desktop shortcut.'
                 Show-Toast 'Shortcut added to your desktop.' 'success'

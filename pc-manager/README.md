@@ -10,7 +10,7 @@ A local app for keeping a Windows 10 or 11 laptop fast, tidy and healthy. It run
 
 If Windows SmartScreen warns about the file, click **More info**, then **Run anyway**.
 
-Tip: **Settings > Add desktop shortcut** gives you a desktop icon that starts PC Manager without the extra console window.
+Tip: double-click **`Create Desktop Shortcut.bat`** (or use **Settings > Add desktop shortcut**) to get a desktop icon that opens PC Manager with no extra console window. Keep the `pc-manager` folder where it is, because the shortcut points to it.
 
 ## What's inside
 
