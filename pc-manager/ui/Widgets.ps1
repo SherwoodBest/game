@@ -81,7 +81,7 @@ function New-QuickTile([int]$Glyph, [string]$Title, [string]$Text, [scriptblock]
     $tile = New-Object System.Windows.Controls.Button
     $tile.Style = $app.TryFindResource('Tile')
     $tile.Width = 204
-    $tile.Height = 112
+    $tile.Height = 140
     $tile.Tag = $Tag
     $stack = New-Object System.Windows.Controls.StackPanel
     $icon = New-IconTile $Glyph $Color $Soft 34
@@ -90,7 +90,7 @@ function New-QuickTile([int]$Glyph, [string]$Title, [string]$Text, [scriptblock]
     $heading = New-Text $Title 13.5 'Text' -Bold -Trim
     $heading.Margin = New-Thick 0 12 0 2
     [void]$stack.Children.Add($heading)
-    [void]$stack.Children.Add((New-Text $Text 12 'TextSub' -Trim))
+    [void]$stack.Children.Add((New-Text $Text 12 'TextSub'))
     $tile.Content = $stack
     if ($OnClick) { $tile.Add_Click($OnClick) }
     return $tile
