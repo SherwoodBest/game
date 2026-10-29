@@ -1,0 +1,71 @@
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+    <StackPanel Margin="16,6,32,28">
+      <TextBlock Style="{StaticResource T.Title}" Text="Cleaner"/>
+      <TextBlock Style="{StaticResource T.Subtitle}" Text="Remove files that Windows and your apps no longer need. Your documents, photos, passwords and browsing history are never touched."/>
+
+      <Border Style="{StaticResource CardStyle}" Padding="24,22">
+        <StackPanel>
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="CleanHeroTile" Style="{StaticResource IconTile}" Width="56" Height="56" CornerRadius="14">
+              <TextBlock x:Name="CleanHeroGlyph" Style="{StaticResource Glyph}" FontSize="24" HorizontalAlignment="Center"
+                         Foreground="{DynamicResource Accent}" Text="&#xE74D;"/>
+            </Border>
+            <StackPanel Grid.Column="1" Margin="18,0,16,0" VerticalAlignment="Center">
+              <TextBlock x:Name="CleanTotal" FontSize="24" FontWeight="SemiBold" Foreground="{DynamicResource Text}" Text="Ready to scan"/>
+              <TextBlock x:Name="CleanTotalSub" Style="{StaticResource T.Sub}" Margin="0,3,0,0"
+                         Text="Scanning only looks. Nothing is deleted until you choose Clean now."/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+              <Button x:Name="CleanScanBtn" Style="{StaticResource Btn.Big}" Content="Scan"/>
+              <Button x:Name="CleanRunBtn" Style="{StaticResource Btn.Big}" Content="Clean now" Visibility="Collapsed" Margin="10,0,0,0"/>
+              <Button x:Name="CleanCancelBtn" Content="Cancel" MinHeight="42" Padding="20,10" Visibility="Collapsed" Margin="10,0,0,0"/>
+            </StackPanel>
+          </Grid>
+          <StackPanel x:Name="CleanProgressBox" Margin="74,18,0,0" Visibility="Collapsed">
+            <ProgressBar x:Name="CleanProgress" Style="{StaticResource Bar}" Value="0"/>
+            <TextBlock x:Name="CleanProgressText" Style="{StaticResource T.Sub}" Margin="0,8,0,0" Text="Starting..."/>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+
+      <Border Style="{StaticResource CardStyle}" Padding="12,14">
+        <StackPanel>
+          <Grid Margin="10,0,6,8">
+            <TextBlock Style="{StaticResource T.Section}" Text="What to clean" Margin="0" VerticalAlignment="Center"/>
+            <Button x:Name="CleanSelectAll" Style="{StaticResource Btn.Link}" Content="Select all" HorizontalAlignment="Right"/>
+          </Grid>
+          <StackPanel x:Name="CleanList"/>
+        </StackPanel>
+      </Border>
+
+      <Border Style="{StaticResource CardStyle}">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+          </Grid.ColumnDefinitions>
+          <Border Style="{StaticResource IconTile}">
+            <TextBlock Style="{StaticResource Glyph}" HorizontalAlignment="Center" Foreground="{DynamicResource Accent}" Text="&#xE946;"/>
+          </Border>
+          <StackPanel Grid.Column="1" Margin="14,0,16,0" VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource T.Body}" FontWeight="SemiBold" Text="Just installed a big Windows update?"/>
+            <TextBlock Style="{StaticResource T.Sub}" Margin="0,2,0,0"
+                       Text="Windows keeps the previous version for a while (often 10 GB or more). Open Disk Cleanup, choose 'Clean up system files' and tick 'Previous Windows installation(s)'."/>
+          </StackPanel>
+          <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button x:Name="CleanDiskCleanupBtn" Content="Disk Cleanup" Margin="0,0,8,0"/>
+            <Button x:Name="CleanStorageSenseBtn" Content="Storage Sense"/>
+          </StackPanel>
+        </Grid>
+      </Border>
+    </StackPanel>
+  </ScrollViewer>
+</Grid>

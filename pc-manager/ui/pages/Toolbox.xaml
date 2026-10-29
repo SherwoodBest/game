@@ -1,0 +1,10 @@
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+    <StackPanel Margin="16,6,32,28">
+      <TextBlock Style="{StaticResource T.Title}" Text="Toolbox"/>
+      <TextBlock Style="{StaticResource T.Subtitle}" Text="Repairs, health checks and updates in one place. Longer jobs open in their own window, so you can keep using PC Manager while they run."/>
+      <StackPanel x:Name="ToolSections"/>
+    </StackPanel>
+  </ScrollViewer>
+</Grid>
