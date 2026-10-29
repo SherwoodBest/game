@@ -502,11 +502,11 @@ function Initialize-Shell {
             if ($window.WindowState -eq 'Maximized') {
                 # A borderless window spills past the screen edge when maximized.
                 $ui.RootGrid.Margin = New-Thick 7 7 7 7
-                $ui.BtnMax.Content = [string][char]0xE923
+                $ui.MaxIcon.Data = [System.Windows.Media.Geometry]::Parse('M2.5,2.5 V0.5 H9.5 V7.5 H7.5 M0.5,2.5 H7.5 V9.5 H0.5 Z')
                 $ui.BtnMax.ToolTip = 'Restore'
             } else {
                 $ui.RootGrid.Margin = New-Thick 0 0 0 0
-                $ui.BtnMax.Content = [string][char]0xE922
+                $ui.MaxIcon.Data = [System.Windows.Media.Geometry]::Parse('M0.5,0.5 H9.5 V9.5 H0.5 Z')
                 $ui.BtnMax.ToolTip = 'Maximize'
             }
         })

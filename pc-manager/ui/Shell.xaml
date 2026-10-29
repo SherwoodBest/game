@@ -40,13 +40,19 @@
           <TextBlock x:Name="AdminPillText" Text="Administrator" FontSize="11" Foreground="{DynamicResource Accent}"/>
         </Border>
       </StackPanel>
-      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
-        <Button x:Name="BtnMin" Style="{StaticResource Btn.Caption}" Height="44" Content="&#xE921;"
-                ToolTip="Minimize" WindowChrome.IsHitTestVisibleInChrome="True"/>
-        <Button x:Name="BtnMax" Style="{StaticResource Btn.Caption}" Height="44" Content="&#xE922;"
-                ToolTip="Maximize" WindowChrome.IsHitTestVisibleInChrome="True"/>
-        <Button x:Name="BtnClose" Style="{StaticResource Btn.Close}" Height="44" Content="&#xE8BB;"
-                ToolTip="Close" WindowChrome.IsHitTestVisibleInChrome="True"/>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Panel.ZIndex="10">
+        <Button x:Name="BtnMin" Style="{StaticResource Btn.Caption}" Height="44" ToolTip="Minimize"
+                WindowChrome.IsHitTestVisibleInChrome="True">
+          <Path Data="M0,5 H10" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" StrokeThickness="1"/>
+        </Button>
+        <Button x:Name="BtnMax" Style="{StaticResource Btn.Caption}" Height="44" ToolTip="Maximize"
+                WindowChrome.IsHitTestVisibleInChrome="True">
+          <Path x:Name="MaxIcon" Data="M0.5,0.5 H9.5 V9.5 H0.5 Z" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" StrokeThickness="1"/>
+        </Button>
+        <Button x:Name="BtnClose" Style="{StaticResource Btn.Close}" Height="44" ToolTip="Close"
+                WindowChrome.IsHitTestVisibleInChrome="True">
+          <Path Data="M0,0 L10,10 M10,0 L0,10" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" StrokeThickness="1"/>
+        </Button>
       </StackPanel>
     </Grid>
 
