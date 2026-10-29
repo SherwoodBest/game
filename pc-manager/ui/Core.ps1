@@ -49,9 +49,25 @@ function Set-Theme([string]$Mode) {
 
 # --- Loading XAML --------------------------------------------------------------
 
+# The deepest message usually names the real cause.
+function Get-InnerMessage($Exception) {
+    $messages = @()
+    while ($Exception) {
+        if ($Exception.Message -and $messages -notcontains $Exception.Message) { $messages += $Exception.Message }
+        $Exception = $Exception.InnerException
+    }
+    return ($messages -join "`n")
+}
+
 function Import-Xaml([string]$Path) {
-    [xml]$doc = Get-Content -LiteralPath $Path -Raw -Encoding UTF8
-    $root = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $doc))
+    $text = Get-Content -LiteralPath $Path -Raw -Encoding UTF8
+    [xml]$doc = $text
+    # Parse (not Load) so that any error names the line it happened on.
+    try {
+        $root = [Windows.Markup.XamlReader]::Parse($text)
+    } catch {
+        throw ('{0}: {1}' -f (Split-Path -Leaf $Path), (Get-InnerMessage $_.Exception))
+    }
     $ns = New-Object System.Xml.XmlNamespaceManager $doc.NameTable
     $ns.AddNamespace('x', $XamlNs)
     foreach ($node in $doc.SelectNodes('//*[@x:Name]', $ns)) {
@@ -120,7 +136,7 @@ function New-Bar([double]$Percent, [string]$Color = 'Accent', [double]$Height = 
     $bar.Style = $app.TryFindResource('Bar')
     $bar.Height = $Height
     $bar.Value = [math]::Max(0, [math]::Min(100, $Percent))
-    Set-Color $bar ([System.Windows.Controls.ProgressBar]::ForegroundProperty) $Color
+    Set-Color $bar ([System.Windows.Controls.Control]::ForegroundProperty) $Color
     return $bar
 }
 

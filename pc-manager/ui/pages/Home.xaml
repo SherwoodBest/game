@@ -6,7 +6,7 @@
       <TextBlock Style="{StaticResource T.Subtitle}" Text="Here is how your PC is doing."/>
 
       <!-- Health hero -->
-      <Border Style="{StaticResource Card}" Padding="28,26">
+      <Border Style="{StaticResource CardStyle}" Padding="28,26">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -45,7 +45,7 @@
       </Border>
 
       <!-- Recommendations -->
-      <Border x:Name="HomeIssuesCard" Style="{StaticResource Card}" Visibility="Collapsed" Padding="12,16">
+      <Border x:Name="HomeIssuesCard" Style="{StaticResource CardStyle}" Visibility="Collapsed" Padding="12,16">
         <StackPanel>
           <TextBlock Style="{StaticResource T.Section}" Text="Recommendations" Margin="10,0,0,8"/>
           <StackPanel x:Name="HomeIssues"/>
@@ -63,7 +63,7 @@
           <ColumnDefinition Width="16"/>
           <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Border Style="{StaticResource Card}">
+        <Border Style="{StaticResource CardStyle}">
           <StackPanel>
             <TextBlock Style="{StaticResource T.Section}" Text="This PC"/>
             <StackPanel x:Name="HomeInfo">
@@ -71,7 +71,7 @@
             </StackPanel>
           </StackPanel>
         </Border>
-        <Border Grid.Column="2" Style="{StaticResource Card}">
+        <Border Grid.Column="2" Style="{StaticResource CardStyle}">
           <StackPanel>
             <TextBlock Style="{StaticResource T.Section}" Text="Usage"/>
             <StackPanel x:Name="HomeUsage">

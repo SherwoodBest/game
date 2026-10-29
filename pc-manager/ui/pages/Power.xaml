@@ -12,7 +12,7 @@
           <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Style="{StaticResource Card}" VerticalAlignment="Top">
+        <Border Style="{StaticResource CardStyle}" VerticalAlignment="Top">
           <StackPanel>
             <TextBlock Style="{StaticResource T.Section}" Text="Power plan"/>
             <StackPanel x:Name="PowerPlans"/>
@@ -25,7 +25,7 @@
           </StackPanel>
         </Border>
 
-        <Border Grid.Column="2" Style="{StaticResource Card}" VerticalAlignment="Top">
+        <Border Grid.Column="2" Style="{StaticResource CardStyle}" VerticalAlignment="Top">
           <StackPanel>
             <TextBlock Style="{StaticResource T.Section}" Text="Battery"/>
             <Grid x:Name="BatteryRingBox" Width="150" Height="150" HorizontalAlignment="Center" Margin="0,4,0,18">

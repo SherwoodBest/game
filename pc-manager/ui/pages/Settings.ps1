@@ -16,7 +16,7 @@ function Update-ActivityList {
         $grid = New-Object System.Windows.Controls.Grid
         Add-Column $grid 110
         Add-Column $grid '*'
-        $when = $(if ($entry.Time.Date -eq (Get-Date).Date) { $entry.Time.ToString('HH:mm') } else { $entry.Time.ToString('d MMM, HH:mm') })
+        $when = $(if ($entry.Time.Date -eq (Get-Date).Date) { $entry.Time.ToString('HH:mm') } else { $entry.Time.ToString('MM-dd HH:mm') })
         Add-ToGrid $grid (New-Text $when 12.5 'TextMuted') 0
         Add-ToGrid $grid (New-Text $entry.Text 12.5 'Text') 1
         $row.Child = $grid

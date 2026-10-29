@@ -5,7 +5,7 @@
       <TextBlock Style="{StaticResource T.Title}" Text="Startup apps"/>
       <TextBlock Style="{StaticResource T.Subtitle}" Text="These apps open by themselves when you sign in. Turn off the ones you do not need straight away - they stay installed, and you can still open them any time."/>
 
-      <Border Style="{StaticResource Card}" Padding="24,20">
+      <Border Style="{StaticResource CardStyle}" Padding="24,20">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -26,11 +26,11 @@
         </Grid>
       </Border>
 
-      <Border Style="{StaticResource Card}" Padding="12,12">
+      <Border Style="{StaticResource CardStyle}" Padding="12,12">
         <StackPanel x:Name="StartupList"/>
       </Border>
 
-      <Border Style="{StaticResource Card}">
+      <Border Style="{StaticResource CardStyle}">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

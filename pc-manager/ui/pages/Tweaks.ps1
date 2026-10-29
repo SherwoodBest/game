@@ -82,7 +82,7 @@ function Update-Tweaks {
         [void]$ui.TweakGroups.Children.Add($header)
 
         $card = New-Object System.Windows.Controls.Border
-        $card.Style = $app.TryFindResource('Card')
+        $card.Style = $app.TryFindResource('CardStyle')
         $card.Padding = New-Thick 6 6 6 6
         $list = New-Object System.Windows.Controls.StackPanel
         foreach ($tweak in $members) { [void]$list.Children.Add((New-TweakRow $tweak)) }

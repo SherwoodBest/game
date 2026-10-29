@@ -5,7 +5,7 @@
       <TextBlock Style="{StaticResource T.Title}" Text="Running apps"/>
       <TextBlock Style="{StaticResource T.Subtitle}" Text="What is using your memory and processor right now, biggest first. Ending an app closes it straight away, so save your work in it first."/>
 
-      <Border Style="{StaticResource Card}" Padding="24,20">
+      <Border Style="{StaticResource CardStyle}" Padding="24,20">
         <StackPanel>
           <Grid>
             <Grid.ColumnDefinitions>
@@ -29,7 +29,7 @@
         </StackPanel>
       </Border>
 
-      <Border Style="{StaticResource Card}" Padding="12,10,12,12">
+      <Border Style="{StaticResource CardStyle}" Padding="12,10,12,12">
         <StackPanel>
           <Grid Margin="62,4,12,6">
             <Grid.ColumnDefinitions>

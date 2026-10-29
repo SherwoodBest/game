@@ -19,7 +19,7 @@
 
       <StackPanel x:Name="TweakGroups"/>
 
-      <Border Style="{StaticResource Card}">
+      <Border Style="{StaticResource CardStyle}">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

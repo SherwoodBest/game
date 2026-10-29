@@ -5,7 +5,7 @@
       <TextBlock Style="{StaticResource T.Title}" Text="Installed apps"/>
       <TextBlock Style="{StaticResource T.Subtitle}" Text="Everything installed on this PC. Removing apps you never use frees space and often stops background updaters too."/>
 
-      <Border Style="{StaticResource Card}" Padding="24,20">
+      <Border Style="{StaticResource CardStyle}" Padding="24,20">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -34,11 +34,11 @@
         </Grid>
       </Border>
 
-      <Border Style="{StaticResource Card}" Padding="12,12">
+      <Border Style="{StaticResource CardStyle}" Padding="12,12">
         <StackPanel x:Name="AppsList"/>
       </Border>
 
-      <Border Style="{StaticResource Card}">
+      <Border Style="{StaticResource CardStyle}">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

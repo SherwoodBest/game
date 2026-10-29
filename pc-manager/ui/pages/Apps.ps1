@@ -50,7 +50,7 @@ function Show-AppsList {
         $parts = @()
         if ($appInfo.Publisher) { $parts += $appInfo.Publisher }
         if ($appInfo.Version) { $parts += ('version {0}' -f $appInfo.Version) }
-        if ($appInfo.Installed) { $parts += ('installed {0}' -f $appInfo.Installed.ToString('d MMM yyyy')) }
+        if ($appInfo.Installed) { $parts += ('installed {0}' -f $appInfo.Installed.ToString('yyyy-MM-dd')) }
         $row = New-ListRow (New-AppIcon $appInfo.Icon 0xE71D 32) $appInfo.Name ($parts -join '  -  ') $right
         $row.Tag = ('{0} {1}' -f $appInfo.Name, $appInfo.Publisher).ToLower()
         [void]$ui.AppsList.Children.Add($row)

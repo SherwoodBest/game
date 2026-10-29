@@ -8,7 +8,7 @@ function Update-StorageDrives {
         if ($drive.Total -le 0) { continue }
         $usedPct = ($drive.Total - $drive.Free) * 100 / $drive.Total
         $card = New-Object System.Windows.Controls.Border
-        $card.Style = $app.TryFindResource('Card')
+        $card.Style = $app.TryFindResource('CardStyle')
         $card.Width = 318
         $card.Margin = New-Thick 0 0 16 16
         $grid = New-Object System.Windows.Controls.Grid
@@ -89,7 +89,7 @@ function Show-LargeFiles($Files) {
         [void]$right.Children.Add($show)
         [void]$right.Children.Add($delete)
 
-        $subtitle = '{0}  -  {1}' -f $file.Folder, $file.Modified.ToString('d MMM yyyy')
+        $subtitle = '{0}  -  {1}' -f $file.Folder, $file.Modified.ToString('yyyy-MM-dd')
         $row = New-ListRow (New-AppIcon $file.FullName 0xE8A5 32) $file.Name $subtitle $right
         $delete.Tag = @{ File = $file; Row = $row }
         [void]$ui.LargeList.Children.Add($row)

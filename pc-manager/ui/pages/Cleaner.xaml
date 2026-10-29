@@ -5,7 +5,7 @@
       <TextBlock Style="{StaticResource T.Title}" Text="Cleaner"/>
       <TextBlock Style="{StaticResource T.Subtitle}" Text="Remove files that Windows and your apps no longer need. Your documents, photos, passwords and browsing history are never touched."/>
 
-      <Border Style="{StaticResource Card}" Padding="24,22">
+      <Border Style="{StaticResource CardStyle}" Padding="24,22">
         <StackPanel>
           <Grid>
             <Grid.ColumnDefinitions>
@@ -35,7 +35,7 @@
         </StackPanel>
       </Border>
 
-      <Border Style="{StaticResource Card}" Padding="12,14">
+      <Border Style="{StaticResource CardStyle}" Padding="12,14">
         <StackPanel>
           <Grid Margin="10,0,6,8">
             <TextBlock Style="{StaticResource T.Section}" Text="What to clean" Margin="0" VerticalAlignment="Center"/>
@@ -45,7 +45,7 @@
         </StackPanel>
       </Border>
 
-      <Border Style="{StaticResource Card}">
+      <Border Style="{StaticResource CardStyle}">
         <Grid>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>

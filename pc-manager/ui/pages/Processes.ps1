@@ -30,7 +30,7 @@ function Show-ProcList($Rows) {
     $ui.ProcSummary.Text = 'Memory {0:N0}% used' -f $usedPct
     $ui.ProcSummarySub.Text = '{0} of {1} in use by {2} apps and background tasks ({3} processes).' -f (Format-Size ($total - $free)), (Format-Size $total), $Rows.Count, $processCount
     $ui.ProcMemBar.Value = $usedPct
-    Set-Color $ui.ProcMemBar ([System.Windows.Controls.ProgressBar]::ForegroundProperty) (Get-LevelColor $usedPct)
+    Set-Color $ui.ProcMemBar ([System.Windows.Controls.Control]::ForegroundProperty) (Get-LevelColor $usedPct)
 
     $ui.ProcList.Children.Clear()
     $shown = @($Rows | Select-Object -First $ProcShowLimit)

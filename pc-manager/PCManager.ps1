@@ -84,8 +84,12 @@ try {
         $app = New-Object System.Windows.Application
         $app.ShutdownMode = 'OnExplicitShutdown'
     }
-    [xml]$themeXml = Get-Content -LiteralPath (Join-Path $AppRoot 'ui\Theme.xaml') -Raw -Encoding UTF8
-    $app.Resources.MergedDictionaries.Add([Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $themeXml)))
+    $themeText = Get-Content -LiteralPath (Join-Path $AppRoot 'ui\Theme.xaml') -Raw -Encoding UTF8
+    try {
+        $app.Resources.MergedDictionaries.Add([Windows.Markup.XamlReader]::Parse($themeText))
+    } catch {
+        throw ('Theme.xaml: {0}' -f (Get-InnerMessage $_.Exception))
+    }
     Set-Theme $Settings.Theme
 
     $window = Import-Xaml (Join-Path $AppRoot 'ui\Shell.xaml')
@@ -104,7 +108,10 @@ try {
     Write-Activity $(if ($IsAdmin) { 'PC Manager started.' } else { 'PC Manager started in limited mode.' })
     [void]$window.ShowDialog()
 } catch {
-    [void][System.Windows.MessageBox]::Show("PC Manager could not start:`n`n$($_.Exception.Message)", 'PC Manager',
+    $details = Get-InnerMessage $_.Exception
+    $where = $_.InvocationInfo.PositionMessage
+    try { Add-Content -Path $LogFile -Value ('{0}  Start-up error: {1}`n{2}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'), $details, $where) } catch { }
+    [void][System.Windows.MessageBox]::Show("PC Manager could not start:`n`n$details`n`n$where", 'PC Manager',
         [System.Windows.MessageBoxButton]::OK, [System.Windows.MessageBoxImage]::Error)
     exit 1
 } finally {
